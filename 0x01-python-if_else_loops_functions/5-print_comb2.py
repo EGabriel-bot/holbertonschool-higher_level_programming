@@ -6,5 +6,6 @@ for i in range(100):
 
     print("{:d}{:d}".format(num2, num), end="")
     if i != 99:
-        print(", ", end="")
-sys.stdout.write("\n")
+        print("{:d}{:d}, ".format(num2, num), end="")
+    elif i == 99:
+        print(i)
