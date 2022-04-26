@@ -5,4 +5,4 @@ for i in range(100):
 
     print("{:d}{:d}".format(num2, num), end="")
     if i != 99:
-        print(" ,", end="")
+        print(", ", end="")
