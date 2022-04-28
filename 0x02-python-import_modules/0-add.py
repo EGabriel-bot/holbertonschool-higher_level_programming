@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import add_0
+if __name__ == "__main__":
 
-a = 1
-b = 2
-c = add_0.add(a, b)
+    a = 1
+    b = 2
+    c = add_0.add(a, b)
 
-print(f"{a} + {b} = {c}")
+    print(f"{a} + {b} = {c}")
