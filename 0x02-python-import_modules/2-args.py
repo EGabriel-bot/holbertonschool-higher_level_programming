@@ -11,5 +11,5 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(len(argv) - 1))
     while i + 1 < len(argv) + 1:
-        print(f"{i}:{argv[i]}")
+        print(f"{i}: {argv[i]}")
         i = i + 1
