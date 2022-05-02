@@ -7,4 +7,3 @@ def element_at(my_list, idx):
             return None
         if(idx == my_list[idx] - 1):
             return my_list[idx]
-        
