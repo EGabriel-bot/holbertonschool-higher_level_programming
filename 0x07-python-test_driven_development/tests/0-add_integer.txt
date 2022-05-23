@@ -1,0 +1,101 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/0-add_integer.txt
+# python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
+
+======================================
+''' Importing add_integer function''''
+======================================
+>>> add_integer = __import__('0-add_integer').add_integer
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: Normal Addition
+  ''' Expecting: expected output '''
+>>> add_integer(1, 2)
+3
+
+Test 2: Negative Addition
+  ''' Expecting: expected output '''
+>>> add_integer(100, -2)
+98
+
+Test 3: One argument
+  ''' Expecting: expected output '''
+>>> add_integer(2)
+100
+
+Test 4: a is float
+  ''' Expecting: expected output '''
+>>> add_integer(100.3, -2)
+98
+
+Test 5: b is float
+  ''' Expecting: expected output '''
+>>> add_integer(-2, 100.3)
+98
+
+Test 6: a and b are float
+  ''' Expecting: expected output '''
+>>> add_integer(10.5, 20.4)
+30
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: no arguments
+  ''' comment '''
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 2: b is a string
+  ''' comment '''
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+Test 2: a is a string
+  ''' comment '''
+>>> add_integer("Best", 4)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 3: a is None
+  ''' comment '''
+>>> add_integer(None, 4)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 4: b is None
+  ''' comment '''
+>>> add_integer(4, None)
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+Test 5: a is NaN
+  ''' comment '''
+>>> add_integer(float('nan'), 4)
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer

@@ -1,0 +1,82 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/5-text_indentation.txt
+# python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: text is a string
+  ''' Expecting: expected output '''
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+beatiorem! Iam ruinas videres""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo?
+
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+Non autem hoc:
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud:
+
+Plus semper voluptatis?
+
+Teneo, inquit, finem illi videri nihil dolere.
+
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+
+Si id dicis, vicimus.
+
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+Sin aliud quid voles, postea.
+
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videresguillaume
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: No arguments passed
+  ''' comment '''
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test 2: text is a number
+  ''' comment '''
+>>> text_indentation(1)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string

@@ -1,0 +1,136 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/3-say_my_name.txt
+# python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: prints first and last name
+  ''' Expecting: expected output '''
+>>> say_my_name("John","Smith")
+My name is John Smith
+
+Test 2: print first name
+  ''' Expecting: expected output '''
+>>> say_my_name("Bob")
+My name is Bob 
+
+Test 3: first_name is empty
+  ''' Expecting: expected output '''
+>>> say_my_name("","White")
+My name is  White
+
+Test 3: last_name is empty
+  ''' Expecting: expected output '''
+>>> say_my_name("Walter","")
+My name is Walter 
+
+Test 4: first_name and last_name are empty
+  ''' Expecting: expected output '''
+>>> say_my_name("","")
+My name is  
+
+Test 5: first_name is a number as a string
+  ''' Expecting: expected output '''
+>>> say_my_name("3.5","White")
+My name is 3.5 White
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: last_name is a number
+  ''' comment '''
+>>> say_my_name("Bob", 1)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Test 1: first_name is a number
+  ''' comment '''
+>>> say_my_name(1, "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 2: nor arguments passed
+  ''' comment '''
+>>> say_my_name()
+Traceback (most recent call last):
+  ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test 3: last_name as None
+  ''' comment '''
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Test 4: first_name and last_name are numbers
+  ''' comment '''
+>>> say_my_name(1, 2)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 5: first_name is float
+  ''' comment '''
+>>> say_my_name(3.5, "Rodriguez")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 6: last_name is float
+  ''' comment '''
+>>> say_my_name("Roberto", 3.5)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Test 7: first_name and last_name are float
+  ''' comment '''
+>>> say_my_name(1.5, 3.5)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 8: first_name is int and last_name is float
+  ''' comment '''
+>>> say_my_name(4, 3.5)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 9: first_name is float and last_name is int
+  ''' comment '''
+>>> say_my_name(3.5, 4)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 10: first_name is nan
+  ''' comment '''
+>>> say_my_name(float('nan'), "Colon")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string

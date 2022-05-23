@@ -1,0 +1,100 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/4-print_square.txt
+# python3 -m doctest -v ./tests/4-print_square.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> print_square = __import__('4-print_square').print_square
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: Print square of 4
+  ''' Expecting: expected output '''
+>>> print_square(4)
+####
+####
+####
+####
+
+
+Test 2: Print square 0
+  ''' Expecting: expected output '''
+>>> print_square(0)
+
+
+Test 2: Print square 0
+  ''' Expecting: expected output '''
+>>> print_square(1)
+#
+
+Test 2: Print square 0
+  ''' Expecting: expected output '''
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: No arguments passed
+  ''' comment '''
+>>> print_square()
+Traceback (most recent call last):
+  ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Test 2: size is a string
+  ''' comment '''
+>>> print_square("hello")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Test 3: size is less than 0
+  ''' comment '''
+>>> print_square(-4)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+Test 4: size is float
+  ''' comment '''
+>>> print_square(3.5)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Test 5: size is negative float
+  ''' comment '''
+>>> print_square(-3.5)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
