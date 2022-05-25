@@ -4,7 +4,7 @@
 
 def print_square(size):
     """Print a square with the size provided (size).
-    if size is not an integer, raise a TypeError 
+    if size is not an integer, raise a TypeError
     and if its less than 0, raise a ValueError"""
     if type(size) not in [int]:
         raise TypeError("size must be an integer")
