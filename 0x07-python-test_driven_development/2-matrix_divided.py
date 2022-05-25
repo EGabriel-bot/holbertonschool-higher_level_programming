@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """returns all elemnts of a matrix divided by a number specified 
+    """returns all elemnts of a matrix divided by a number specified
     by the user (div).
     """
     typeerr = "matrix must be a matrix (list of lists) of integers/floats"
