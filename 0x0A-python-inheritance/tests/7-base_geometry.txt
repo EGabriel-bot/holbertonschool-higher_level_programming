@@ -141,11 +141,11 @@ Test 10: large number
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
 
-Test 10: large number
+Test 10: tuple
       ''' Expecting '''
 >>> bg = BaseGeometry()
 >>> try:
-...     bg.integer_validator("age", 43e00, 10)
+...     bg.integer_validator("age", (4,2))
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] integer_validator() takes 3 positional arguments but 4 were given
+[TypeError] age must be an integer
