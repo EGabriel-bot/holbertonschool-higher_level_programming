@@ -149,3 +149,12 @@ Test 10: tuple
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
+
+Test 11: None
+      ''' Expecting '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
