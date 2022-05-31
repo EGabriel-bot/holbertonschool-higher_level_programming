@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Square #2"""
+
+
 class BaseGeometry:
+    """Class BaseGeometry"""
+
     def area(self):
         raise Exception("area() is not implemented")
 
@@ -11,6 +16,8 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """Class Rectangle"""
+
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
@@ -25,6 +32,8 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """Class Square"""
+
     def __init__(self, size):
         self.__size = size
         super().__init__(self.__size, self.__size)
