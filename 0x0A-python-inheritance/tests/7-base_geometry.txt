@@ -122,3 +122,21 @@ Test 8: Name not a string
 ...     bg.integer_validator(15, 10)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
+
+Test 9: both empty strings
+    ''' Expecting: '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("", "")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError]  must be an integer
+
+Test 10: large number
+      ''' Expecting '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", 43e00)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
