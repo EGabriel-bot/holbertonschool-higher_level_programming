@@ -13,5 +13,5 @@ class BaseGeometry:
         """Integer validator method"""
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
-        if value <= 0:
+        elif value <= 0:
             raise ValueError(f"{name} must be greater than 0")
