@@ -2,19 +2,7 @@
 """Rectangle"""
 
 
-class BaseGeometry:
-    """Class BaseGeometry"""
-
-    def area(self):
-        """Area method"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Integer validator method"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -26,3 +14,4 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
         Rectangle.integer_validator(self, "height", self.__height)
+        Rectangle.integer_validator(self, "width", self.__width)
