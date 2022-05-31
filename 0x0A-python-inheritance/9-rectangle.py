@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Full rectangle"""
+
+
 class BaseGeometry:
+    """Class BaseGeometry"""
+
     def area(self):
         raise Exception("area() is not implemented")
 
