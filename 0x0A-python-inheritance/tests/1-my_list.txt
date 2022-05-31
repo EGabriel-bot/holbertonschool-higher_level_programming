@@ -19,7 +19,7 @@ SUCCESS CASES
 
 Category 1
 ==========
-
+Test 1: print sorted
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -28,6 +28,16 @@ Category 1
 >>> my_list.append(5)
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
+
+Test 2: print normally
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
 
 
@@ -38,7 +48,7 @@ CASES THAT SHOULD NOT WORK
 Category 2
 ==========
 
-Test 2: Test Name
+Test 1: Test Name
   ''' comment '''
 >>> my_list = MyList()
 >>> my_list.append("string")
