@@ -71,6 +71,16 @@ Test 5: negative number
 >>> my_list.print_sorted()
 [-1, 2, 3, 4, 5]
 
+Test 6: float
+>>> my_list = MyList()
+>>> my_list.append(2.5)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[2, 2.5, 3, 4, 5]
+
 
 ==========================
 CASES THAT SHOULD NOT WORK
@@ -79,7 +89,7 @@ CASES THAT SHOULD NOT WORK
 Category 2
 ==========
 
-Test 1: Test Name
+Test 1: string
   ''' comment '''
 >>> my_list = MyList()
 >>> my_list.append("string")
