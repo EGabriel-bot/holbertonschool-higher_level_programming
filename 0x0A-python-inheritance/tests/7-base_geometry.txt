@@ -43,6 +43,10 @@ Test 3: One empty argument
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 
+Test 4: BS
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
 
 
 ==========================
