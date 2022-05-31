@@ -1,11 +1,8 @@
-============================================
-''' This is the Start of Unit Testing... '''
-============================================
-''' TESTING WITH the following... '''
+The ``7-base_geometry`` module
+======================
 
-''' Does the same as test below, but gives more details '''
-# python3 -m doctest -v ./tests/7-base_geometry.txt
-# python3 -m doctest -v ./tests/7-base_geometry.txt | tail -2
+Using ``base_geometry``
+------------------------
 
 ======================================
 ''' Importing TEMPLATE function''''
@@ -27,138 +24,47 @@ Test 1: Base Case
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 
-Test 2: Name not a string
-    ''' Expecting: SUCCESS'''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator(15, 10)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
+Usage:
 
-Test 3: One empty argument
-    ''' Expecting: '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("", 10)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-
-Test 4: BS
->>> bg.integer_validator("my_int", 12)
+name should be a string and value ALWAYS a positive integer and different than 0
+>>> bg.integer_validator("an_int", 18)
 >>> bg.integer_validator("width", 89)
 
+=== Test area function, not implemented ===
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
 
+=== Test with 0 ===
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
 
-==========================
-CASES THAT SHOULD NOT WORK
-==========================
+=== Test with a negative number ===
+>>> bg.integer_validator("width", -1)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
 
-Category 2
-==========
+=== Test with something different than an integer ===
 
-Test 1: Value is a string
-    ''' Expecting TypeError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] name must be an integer
+>>> bg.integer_validator("width", (4,))
+Traceback (most recent call last):
+TypeError: width must be an integer
 
-Test 2: Value is 0
-    ''' Expecting ValueError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] age must be greater than 0
+>>> bg.integer_validator("name", "Dani")
+Traceback (most recent call last):
+TypeError: name must be an integer
 
-Test 3: Value is a float
-    ''' Expecting TypeError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", 5.5)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] age must be an integer
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
 
-Test 4: Negative number
-  ''' Expecting: TypeError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("result", -15)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] result must be greater than 0
+=== Tests with no arguments ===
 
-Test 5: Call to area()
-    ''' Expecting: Exception '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.area()
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[Exception] area() is not implemented
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Test 6: Passing 1 argument
-    ''' Expecting: TypeError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator(15)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] integer_validator() missing 1 required positional argument: 'value'
-
-Test 7: No argument
-    ''' Expecting: TypeError '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator()
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-Test 8: Name not a string
-    ''' Expecting: '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator(15, 10)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-
-Test 9: both empty strings
-    ''' Expecting: '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("", "")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError]  must be an integer
-
-Test 10: large number
-      ''' Expecting '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", 43e00)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] age must be an integer
-
-Test 10: tuple
-      ''' Expecting '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", (4,2))
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] age must be an integer
-
-Test 11: None
-      ''' Expecting '''
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", None)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] age must be an integer
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
