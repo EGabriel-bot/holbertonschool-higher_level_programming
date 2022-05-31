@@ -4,25 +4,9 @@ The ``7-base_geometry`` module
 Using ``base_geometry``
 ------------------------
 
-======================================
-''' Importing TEMPLATE function''''
-======================================
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-==============
-SUCCESS CASES
-==============
-
-Category 1
-==========
-
-Test 1: Base Case
-  ''' Expecting: SUCCESS '''
 >>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator("age", 15)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
 
 Usage:
 
