@@ -1,7 +1,7 @@
 ============================================
 ''' This is the Start of Unit Testing... '''
 ============================================
-''' TESTTING WITH the following... '''
+''' TESTING WITH the following... '''
 
 ''' Does the same as test below, but gives more details '''
 # python3 -m doctest -v ./tests/1-my_list.txt
@@ -19,7 +19,9 @@ SUCCESS CASES
 
 Category 1
 ==========
-Test 1: print sorted
+
+Test 1: Sorting a list of integers
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -29,58 +31,84 @@ Test 1: print sorted
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
-Test 2: print normally
+Test 2: Sorting just one integer
+  ''' Expecting: SUCCESS '''
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1]
+
+Test 3: Nothing
+  ''' Expecting: SUCCESS '''
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+Test 4: Sorting with repeated integers
+  ''' Expecting: SUCCESS '''
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 2, 3]
+
+Test 5: Passing 0
+  ''' Expecting: SUCCESS '''
+>>> my_list = MyList()
+>>> my_list.append(0)
+>>> my_list.append(10)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[0, 5, 10]
+
+Test 6: Passing negative integers
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
 >>> my_list.append(3)
+>>> my_list.append(-3)
 >>> my_list.append(5)
->>> print(my_list)
-[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[-3, 3, 5]
 
-Test 3: Normal output
+Test 7: Passing floats
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(4)
+>>> my_list.append(2.5)
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
->>> print(my_list)
-[1, 4, 2, 3, 5]
+[2, 2.5, 3]
 
-Test 4: extra long number
->>> my_list = MyList()
->>> my_list.append(234e5699)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(3)
->>> my_list.append(5)
->>> my_list.print_sorted()
-[2, 3, 4, 5, inf]
-
-Test 5: negative number
+Test 3: Incredibly large number
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
 >>> my_list.append(-1)
 >>> my_list.append(4)
 >>> my_list.append(2)
+>>> my_list.append(3e400)
 >>> my_list.append(3)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
-[-1, 2, 3, 4, 5]
+[2, 3, inf]
 
-Test 6: float
+Test 4: Checking for succesful copy
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
->>> my_list.append(2.5)
+>>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
-[2, 2.5, 3, 4, 5]
-
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
 ==========================
 CASES THAT SHOULD NOT WORK
@@ -89,27 +117,48 @@ CASES THAT SHOULD NOT WORK
 Category 2
 ==========
 
-Test 1: string
-  ''' comment '''
+Test 1: Passing a string
+  ''' Expecting: TypeError '''
 >>> my_list = MyList()
->>> my_list.append("string")
->>> my_list.append(4)
+>>> my_list.append(1)
+>>> my_list.append("Hello")
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-  ...
-TypeError: '<' not supported between instances of 'int' and 'str'
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
 
-Test 2: tuple
+Test 2: Passing a character
+  ''' Expecting: TypeError '''
 >>> my_list = MyList()
->>> my_list.append((1, 2))
->>> my_list.append(4)
+>>> my_list.append(1)
+>>> my_list.append("C")
 >>> my_list.append(2)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+Test 3: Passing number as string
+  ''' Expecting: TypeError '''
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append("2")
 >>> my_list.append(3)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-  ...
-TypeError: '<' not supported between instances of 'int' and 'tuple'
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+Test 4: Passing a list
+  ''' Expecting: TypeError ''' 
+>>> my_list.append(1)
+>>> my_list.append((2, 3))
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
