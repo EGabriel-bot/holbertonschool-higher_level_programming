@@ -35,4 +35,4 @@ class Base:
         empty = []
         if json_string is None:
             return empty
-        return json.loads(json_string)
+        return (json.loads(json_string))
