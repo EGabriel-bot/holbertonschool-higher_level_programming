@@ -15,12 +15,12 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    """to json method"""
     def to_json_string(list_dictionaries):
+        """to json method"""
         return json.dumps(list_dictionaries)
 
-    """save to file method"""
     def save_to_file(cls, list_onjs):
+        """save to file method"""
 
         if list_onjs is None:
             empty = []
