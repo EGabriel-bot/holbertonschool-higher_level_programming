@@ -29,10 +29,11 @@ class Base:
             strrep = cls.to_json_string(list_onjs)
             wrote_data = f.write(strrep)
 
+    @staticmethod
     def from_json_string(json_string):
         """ from json string method """
-        if json_string is None or not json_string:
+        if json_string is None:
             empty = []
             return empty
         else:
-            return json_string
+            return json.loads(json_string)
