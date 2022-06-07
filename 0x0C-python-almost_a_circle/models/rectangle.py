@@ -100,9 +100,3 @@ class Rectangle(Base):
                 setattr(self, arguments, kwargs[arguments])
         else:
             pass
-
-    def to_dictionary(self):
-        """ to dictionary method """
-        return {'id': self.id, 'x': self.x,
-                'size': self.size, 'y': self.y}
-        return dictionary

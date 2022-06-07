@@ -29,6 +29,11 @@ class Square(Rectangle):
         """ str method for square """
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
 
+    def to_dictionary(self):
+        """ to dictionary method """
+        return {'id': self.id, 'size': self.size,
+                'x': self.x, 'y': self.y}
+
     def update(self, *args, **kwargs):
         """ update method for square """
         arguments = ["id", "size", "x", "y"]
