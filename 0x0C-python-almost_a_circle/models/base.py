@@ -8,15 +8,18 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Class constructor"""
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    """to json method"""
     def to_json_string(list_dictionaries):
         return json.dumps(list_dictionaries)
 
+    """save to file method"""
     def save_to_file(cls, list_onjs):
 
         if list_onjs is None:
