@@ -84,3 +84,9 @@ class Rectangle(Base):
                 setattr(self, arguments, kwargs[arguments])
         else:
             pass
+
+    def to_dictionary(self):
+        my_dict = {"id": self.id, "width": self.width,
+                   "height": self.height, "x": self.x, "y": self.y}
+
+        return my_dict
