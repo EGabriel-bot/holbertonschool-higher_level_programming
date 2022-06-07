@@ -32,6 +32,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ from json string method """
+        empty = []
         if json_string is None:
             empty = []
             return empty
