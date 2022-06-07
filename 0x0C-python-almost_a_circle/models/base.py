@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Base"""
+""" Base """
 import json
 
 
 class Base:
-    """Class named Base"""
+    """ Class named Base """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Class constructor"""
+        """ Class constructor """
         if id is not None:
             self.id = id
         else:
@@ -16,11 +16,11 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """to json method"""
+        """ to json method """
         return json.dumps(list_dictionaries)
 
     def save_to_file(cls, list_onjs):
-        """save to file method"""
+        """ save to file method """
 
         if list_onjs is None:
             empty = []
@@ -30,7 +30,7 @@ class Base:
             wrote_data = f.write(strrep)
 
     def from_json_string(json_string):
-        """from json string method"""
+        """ from json string method """
         if json_string is None or not json_string:
             empty = []
             return empty
