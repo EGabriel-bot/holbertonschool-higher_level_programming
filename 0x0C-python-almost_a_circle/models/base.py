@@ -36,4 +36,4 @@ class Base:
             empty = []
             return empty
         else:
-            return json.loads(json_string)
+        return json.loads(json_string)
