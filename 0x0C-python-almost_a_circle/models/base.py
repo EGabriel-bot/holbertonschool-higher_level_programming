@@ -30,6 +30,7 @@ class Base:
             wrote_data = f.write(strrep)
 
     def from_json_string(json_string):
+        """from json string method"""
         if json_string is None or not json_string:
             empty = []
             return empty
