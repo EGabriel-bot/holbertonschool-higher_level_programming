@@ -34,7 +34,5 @@ class Base:
         """ from json string method """
         empty = []
         if json_string is None:
-            empty = []
             return empty
-        else:
         return json.loads(json_string)
