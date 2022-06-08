@@ -16,12 +16,12 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_dict):
+    def to_json_string(list_dictionaries):
         """ to json method """
-        if list_dict is None or len(list_dict) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
-            return json.dumps(list_dict)
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_onjs):
