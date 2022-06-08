@@ -33,7 +33,7 @@ class Base:
     def from_json_string(json_string):
         """ from json string method """
         empty = []
-        if json_string is None:
+        if not isinstance(json_string, str) or json_string is None:
             return empty
         else:
-            return json.loads(json_string)
+        return json.loads(json_string)
