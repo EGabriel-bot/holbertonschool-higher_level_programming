@@ -33,7 +33,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ from json string method """
+        """from json string"""
         if not isinstance(json_string, str) or len(json_string) == 0:
             return []
         else:
