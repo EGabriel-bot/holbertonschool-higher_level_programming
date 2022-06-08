@@ -15,10 +15,12 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ to json method """
         return json.dumps(list_dictionaries)
 
+    @classmethod
     def save_to_file(cls, list_onjs):
         """ save to file method """
 
@@ -32,7 +34,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ from json string method """
-        empty = []
         if not isinstance(json_string, str) or len(json_string) == 0:
             return []
         else:
