@@ -38,5 +38,4 @@ class Base:
         """from json string"""
         if not isinstance(json_string, str) or json_string == "":
             return []
-        else:
         return json.loads(json_string)
