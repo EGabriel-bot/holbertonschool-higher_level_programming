@@ -35,5 +35,4 @@ class Base:
         empty = []
         if not isinstance(json_string, str) or json_string is None:
             return empty
-        else:
         return json.loads(json_string)
