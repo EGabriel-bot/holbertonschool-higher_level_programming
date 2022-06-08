@@ -34,6 +34,6 @@ class Base:
         """ from json string method """
         empty = []
         if not isinstance(json_string, str) or len(json_string) == 0:
-            return empty
+            return []
         else:
             return json.loads(json_string)
