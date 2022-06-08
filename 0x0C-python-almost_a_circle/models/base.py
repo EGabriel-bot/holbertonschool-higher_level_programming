@@ -35,4 +35,5 @@ class Base:
         empty = []
         if not isinstance(json_string, str) or len(json_string) == 0:
             return empty
-        return json.loads(json_string)
+        else:
+            return json.loads(json_string)
