@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities(
   state_id INT NOT NULL,
   PRIMARY KEY (id),
   CONSTRAINT FK_states FOREIGN KEY (state_id) 
-  REFERENCES cities (id)
+  REFERENCES states (id)
 );
