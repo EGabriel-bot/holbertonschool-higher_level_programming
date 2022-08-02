@@ -12,7 +12,7 @@ module.exports = class Square extends Rectangle {
         if (c === undefined) {
           string += 'X';
         } else {
-          string += 'C';
+          string += `${c}`;
         }
       }
       console.log(string);
