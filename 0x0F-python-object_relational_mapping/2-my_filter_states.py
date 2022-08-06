@@ -10,8 +10,8 @@ if __name__ == '__main__':
         password=sys.argv[2], database=sys.argv[3])
     name = sys.argv[4]
     c = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE '{name}%'\
-         ORDER BY id ASC".format(
-        name=sys.argv[4])
+    query = f"SELECT * FROM states WHERE name LIKE '{name}%'\
+         ORDER BY id ASC"
     c.execute(query)
-    [print(state) for state in c.fetchall()]
+    for state in c.fetchall():
+        print(state)
