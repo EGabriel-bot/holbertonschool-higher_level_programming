@@ -8,7 +8,6 @@ if __name__ == '__main__':
     db = MySQLdb.connect(
         host="localhost", port=3306, user=sys.argv[1],
         password=sys.argv[2], database=sys.argv[3])
-    name = sys.argv[4]
     c = db.cursor()
     query = "SELECT * FROM states WHERE name LIKE '{name}%'\
          ORDER BY id ASC".format(name=sys.argv[4])
