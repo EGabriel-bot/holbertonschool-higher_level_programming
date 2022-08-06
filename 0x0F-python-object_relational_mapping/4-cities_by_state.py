@@ -9,5 +9,6 @@ if __name__ == '__main__':
         password=sys.argv[2], database=sys.argv[3])
     c = db.cursor()
     c.execute(
-        "SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id = states.id;")
+        "SELECT cities.id, cities.name, states.name \
+            FROM cities INNER JOIN states ON cities.state_id = states.id;")
     [print(cities) for cities in c.fetchall()]
