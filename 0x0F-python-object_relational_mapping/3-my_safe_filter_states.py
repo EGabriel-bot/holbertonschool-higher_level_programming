@@ -13,7 +13,8 @@ if __name__ == '__main__':
     query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC;", (name,)
     if type(name) is not str:
         raise TypeError('state name needs to be a string')
-    c.execute(query)
+    c.execute("SELECT * FROM states WHERE name LIKE \
+        %s ORDER BY id ASC;", (name,))
     for state in c.fetchall():
         if state[1] == name:
             print(state)
