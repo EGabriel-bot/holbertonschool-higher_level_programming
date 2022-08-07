@@ -1,4 +1,4 @@
-#!/usr/bin python3
+#!/usr/bin/python3
 """declaring columns for a table"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
