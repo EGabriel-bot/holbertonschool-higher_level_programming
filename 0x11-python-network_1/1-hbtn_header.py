@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from urllib import request
+    import urllib.request
     import sys
 
     with request.urlopen('{}'.format(sys.argv[1])) as response:
