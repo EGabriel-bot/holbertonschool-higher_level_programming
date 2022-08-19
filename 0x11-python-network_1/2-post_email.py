@@ -11,7 +11,7 @@ if __name__ == "__main__":
     }
 
     query_string = urllib.parse.urlencode(params)
-    data = query_string.decode("ascii")
+    data = query_string.encode("ascii")
 
     with urllib.request.urlopen(url, data) as response:
         response_text = response.read()
