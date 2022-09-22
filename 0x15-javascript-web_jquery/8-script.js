@@ -1,6 +1,5 @@
-fetch = $.getJSON('https://swapi-api.hbtn.io/api/films/?format=json'), function(data){
-  for( i=0; i < fetch; i++){
-    $(`<li>${fetch.data.title}</li>`).appendTo('#list_movies')
-  }
-}
-
+$.getJSON('https://swapi-api.hbtn.io/api/films/?format=json', function(data){
+  for (let i = 0; i < data.results.length; i++){
+    $(`<li>${data.results[i].title}</li>`).appendTo('#list_movies')
+  };
+});
